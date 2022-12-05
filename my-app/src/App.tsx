@@ -1,16 +1,13 @@
 import './App.css';
-import Navbar from './components/Navbar'
+import Navbar from './components/Navigation/Navbar'
+import Profile from './components/Profile/ProfileContentHolder'
 
 function App() {
   return (
     <div>
       <Navbar/>
-      <body className="h-screen bg-white-700 dark:bg-blue-700">
-        <h2 className="underline">Kevin & Tristan zijn leuke backend developers</h2>
-        <h3>xoxo je frontendslaafje</h3>
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-          Button
-        </button>
+      <body className="h-screen overflow-hidden bg-gray-900">
+        <Profile name={'bben25'} id={'25'}/>
       </body>
     </div>
   );
