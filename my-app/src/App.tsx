@@ -6,7 +6,7 @@ function App() {
   return (
     <div>
       <Navbar/>
-      <body className="h-screen overflow-hidden bg-gray-900">
+      <body className="h-screen overflow-hidden bg-gray-100">
         <Profile name={'bben25'} id={'25'}/>
       </body>
     </div>

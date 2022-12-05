@@ -1,9 +1,9 @@
 const Navbar = () => {
   return (
-    <nav className="px-2 sm:px-4 py-2.5 bg-gray-900 h-fit">
+    <nav className="px-2 sm:px-4 py-2.5 h-fit border-b-2 border-gray-200">
       <div className="container flex flex-wrap items-center justify-between mx-auto">
-          <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-            Rijsimulator
+          <span className="ml-2 text-2xl font-black whitespace-nowrap text-gray-800">
+            P&O Rijsimulator
           </span>
         <button
           type="button"
