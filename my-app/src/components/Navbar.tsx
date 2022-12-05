@@ -1,29 +1,26 @@
-
-
 const Navbar = () => {
-    return (<nav>
-        <div className="container mx-auto px-6 py-2 flex justify-between items-center">
-          <a className="font-bold text-2xl lg:text-4xl" href="#">
-            SHMW
-          </a>
-          <div className="block lg:hidden">
-            <button className="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-800 hover:border-teal-500 appearance-none focus:outline-none">
-              <svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <title>Menu</title>
-                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-              </svg>
-            </button>
-          </div>
-          <div className="hidden lg:block">
-            <ul className="inline-flex">
-              <li><a className="px-4 font-bold" href="/">Home</a></li>
-              <li><a className="px-4 hover:text-blue-800" href="#">About</a></li>
-              <li><a className="px-4 hover:text-gray-800" href="#">Contact</a></li>
-            </ul>
-          </div>
+  return (
+    <nav className="px-2 bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
+      <div className="container flex flex-wrap items-center justify-between mx-auto">
+        <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+          Rijsimulator
+        </span>
+        <div className="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+          <ul className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <li>
+              <a
+                href="home"
+                className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-white dark:bg-blue-600 md:dark:bg-transparent"
+                aria-current="page"
+              >
+                Home
+              </a>
+            </li>
+          </ul>
         </div>
-      </nav>
-    )
-}
+      </div>
+    </nav>
+  );
+};
 
-export default Navbar
+export default Navbar;
