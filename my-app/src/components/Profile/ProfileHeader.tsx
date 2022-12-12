@@ -4,15 +4,14 @@ interface ProfileHeaderComponents {
 
 const ProfileHeader = (props: ProfileHeaderComponents) => {
     return (
-        <div className='flex flex-wrap item-center mt-5 h-1/3 w-5/6 border-b-2 border-gray-300'>
-            <label className='mt-5 w-1/2 h-1/3 tracking-wider font-mono font-extrabold text-3xl text-gray-700'>
-                {props.name}
-            </label>
-            <label className='mt-5 w-1/2 h-1/3 tracking-wider font-mono text-xl text-gray-500'>
-                pro automobilist
-            </label>
-            <div className='h-full w-1/3 bg-rose-100'>
-                mooie foto hier :)
+        <div className='mt-5 h-1/3 w-5/6 border-b-2 border-gray-300'>
+            <div className='w-1/2 h-full flex-wrap'>
+                <label className='w-full h-1/2 tracking-wider font-mono font-extrabold text-3xl text-gray-800 block'>
+                    {props.name}
+                </label>
+                <label className='bottom-0 w-full h-1/2 tracking-wider font-mono text-xl text-gray-500 block'>
+                    pro automobilist
+                </label>
             </div>
         </div>
     )

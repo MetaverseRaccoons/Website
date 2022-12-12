@@ -5,6 +5,10 @@ module.exports = {
     extend: {
       color: {
         'body': '#111827'
+      },
+      padding: {
+        '1/2': '50%',
+        'full': '100%'
       }
     },
   },
