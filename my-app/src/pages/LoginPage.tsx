@@ -1,4 +1,24 @@
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+
+/*
+  testtokens:
+    
+*/
+
+const baseURL = "";
+
 const LoginPage = () => {
+  const [post, setPost] = useState<string>('');
+
+  const createPost = () => {
+    axios.post(baseURL, {
+      
+      token: ''
+    })
+    .then((response) => {setPost(response.data)});
+  }
+
   return (
     <div className="w-screen h-screen flex items-center justify-center">
       <div className="h-1/2 w-2/3 rounded border-2 flex items-center justify-center">
@@ -38,7 +58,7 @@ const LoginPage = () => {
             </div>
           </div>
           <div className='flex justify-center'>
-            <button className="flex-shrink-0 w-1/2 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-normal font-bold border-4 text-white py-1 px-2 rounded">
+            <button onClick={createPost} className="flex-shrink-0 w-1/2 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-normal font-bold border-4 text-white py-1 px-2 rounded">
               Login
             </button>
           </div>
