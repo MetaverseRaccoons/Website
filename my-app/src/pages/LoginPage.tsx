@@ -72,12 +72,12 @@ const LoginPage = () => {
               />
             </div>
           </div>
-          <div className='flex justify-center'>
+        </form>
+        <div className='flex justify-center'>
             <button onClick={createPost} className="flex-shrink-0 w-1/2 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-normal font-bold border-4 text-white py-1 px-2 rounded">
               Login
             </button>
           </div>
-        </form>
       </div>
     </div>
   );
