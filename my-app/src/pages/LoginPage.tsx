@@ -12,19 +12,24 @@ const LoginPage = () => {
   const [post1, setPost] = useState();
 
   const createPost = () => {
-    axios.post(baseURL, {
-      username:"k23",
-      email:"k2@tel.be",
-      password1:"k95687llll",
-      password2:"k95687llll",
-      is_learner:true,
-      is_instructor:false,
-      national_registration_number:"43254325433",
-      has_drivers_license:false,
-      is_shareable:false
+    axios({
+      method: 'post',
+      url: baseURL,
+      data: {
+        username:"k234",
+        email:"k2@tel.be",
+        password1:"k95687llll",
+        password2:"k95687llll",
+        is_learner:true,
+        is_instructor:false,
+        national_registration_number:"43254325433",
+        has_drivers_license:false,
+        is_shareable:false }
     })
     .then((response) => {
       setPost(response.data);
+    }).catch((error) => {
+      console.log(error);
     });
   }
 
