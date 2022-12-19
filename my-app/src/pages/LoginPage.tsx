@@ -6,21 +6,31 @@ import { useEffect, useState } from 'react';
     
 */
 
-const baseURL = "";
+const baseURL = "http://127.0.0.1:8000/api/user/";
 
 const LoginPage = () => {
-  const [post, setPost] = useState<string>('');
+  const [post1, setPost] = useState();
 
   const createPost = () => {
     axios.post(baseURL, {
-      
-      token: ''
+      username:"k23",
+      email:"k2@tel.be",
+      password1:"k95687llll",
+      password2:"k95687llll",
+      is_learner:true,
+      is_instructor:false,
+      national_registration_number:"43254325433",
+      has_drivers_license:false,
+      is_shareable:false
     })
-    .then((response) => {setPost(response.data)});
+    .then((response) => {
+      setPost(response.data);
+    });
   }
 
   return (
     <div className="w-screen h-screen flex items-center justify-center">
+      <h1>{(post1) ? post1 : 'no data'}</h1>
       <div className="h-1/2 w-2/3 rounded border-2 flex items-center justify-center">
         <form className="w-full max-w-lg">
           <div className="flex flex-wrap -mx-3 mb-6">
