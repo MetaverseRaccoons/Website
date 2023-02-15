@@ -4,7 +4,7 @@ const Certificates: CertificateType[] = [
     {
         id: '0',
         title: 'pro autobestuurder',
-        description: 'zeer goed achter het stuur'
+        description: 'zeer goed achter het stuur\nfdjsklfjfdlsjfblahblahblah'
     }
 ]
 
