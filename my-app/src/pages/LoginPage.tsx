@@ -1,3 +1,24 @@
+import * as backend from '../apis/backend';
+
+const testfunc = async () => {
+
+  const account: backend.CreateAccountRequest = {
+    username: 'test',
+    password1: 'test',
+    password2: 'test',
+    email: 'test@test.be',
+    national_registration_number: '02.02.03-21373',
+    is_learner: false,
+    is_instructor: false,
+    has_drivers_license: false,
+    is_shareable: false
+  }
+
+  const createAccountResponse = await backend.createAccount(account)
+  
+
+}
+
 const LoginPage = () => {
   return (
     <div className="w-screen h-screen flex items-center justify-center">
@@ -37,12 +58,12 @@ const LoginPage = () => {
               />
             </div>
           </div>
-          <div className='flex justify-center'>
-            <button className="flex-shrink-0 w-1/2 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-normal font-bold border-4 text-white py-1 px-2 rounded">
+        </form>
+        <div className='flex justify-center'>
+            <button onClick={testfunc} className="flex-shrink-0 w-1/2 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-normal font-bold border-4 text-white py-1 px-2 rounded">
               Login
             </button>
           </div>
-        </form>
       </div>
     </div>
   );
