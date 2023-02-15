@@ -4,22 +4,27 @@ import { createToken } from "../backend";
 const LoginPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    const { refresh, access } = await createToken({
-      username,
-      password,
-    });
-    window.localStorage.setItem("refresh", refresh);
-    window.localStorage.setItem("access", access);
-    // window.location.href = "/home";
+    event.preventDefault();
+    try {
+      const { refresh, access } = await createToken({
+        username,
+        password,
+      });
+      window.localStorage.setItem("refresh", refresh);
+      window.localStorage.setItem("access", access);
+      window.location.href = "/home";
+    } catch(error) {
+      setError((error as Error).message);
+    }
   };
 
   return (
     <div className="w-screen h-screen flex items-center justify-center">
       <div className="h-1/2 w-2/3 rounded border-2 flex items-center justify-center">
-        <form className="w-full max-w-lg" onSubmit={event => handleSubmit(event)}>
+        <form className="w-full max-w-lg" onSubmit={handleSubmit}>
           <div className="flex flex-wrap -mx-3 mb-6">
             <div className="w-full px-3">
               <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
@@ -53,6 +58,7 @@ const LoginPage = () => {
               Login
             </button>
           </div>
+          <p className="p-2">{error}</p>
         </form>
       </div>
     </div>
