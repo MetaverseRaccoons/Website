@@ -1,21 +1,5 @@
 import { FormEvent, useState } from "react";
-import * as backend from "../apis/backend";
-
-const testfunc = async () => {
-  const account: backend.CreateAccountRequest = {
-    username: "test123",
-    password1: "geeninspiratie",
-    password2: "geeninspiratie",
-    email: "test123@test.be",
-    national_registration_number: "02.02.03-21373",
-    is_learner: false,
-    is_instructor: false,
-    has_drivers_license: false,
-    is_shareable: false,
-  };
-
-  const createAccountResponse = await backend.createAccount(account);
-};
+import * as backend from "../backend";
 
 const LoginPage = () => {
 
