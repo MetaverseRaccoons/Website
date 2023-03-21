@@ -49,7 +49,7 @@ interface MessageResponse {
     message: string;
 }
 
-enum Order {
+export enum Order {
     Ascending,
     Descending,
 }
