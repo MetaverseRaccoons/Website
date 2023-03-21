@@ -35,11 +35,23 @@ export interface FriendRelation {
 
 export type FriendsResponse = FriendRelation[];
 
+export interface Violation {
+    type: string;
+    severity: number;
+    description: string;
+    date: string;
+}
+
 interface Successful {
     success: boolean;
 }
 interface MessageResponse {
     message: string;
+}
+
+enum Order {
+    Ascending,
+    Descending,
 }
 
 const baseUrl = process.env.REACT_APP_BACKEND_BASE_URL || "";
@@ -185,6 +197,61 @@ export async function getReceivedFriendRequests(accessToken: string): Promise<Fr
 
 export async function getFriends(accessToken: string): Promise<FriendsResponse> {
     const response = await fetch(`${baseUrl}/api/friend/`, {
+        method: 'GET',
+        headers: {
+            'Authorization': `Bearer ${accessToken}`,
+            'Content-Type': 'application/json',
+        },
+    });
+    return response.json();
+}
+
+export async function getViolations(accessToken: string): Promise<Violation[]> {
+    const response = await fetch(`${baseUrl}/api/violation/`, {
+        method: 'GET',
+        headers: {
+            'Authorization': `Bearer ${accessToken}`,
+            'Content-Type': 'application/json',
+        },
+    });
+    return response.json();
+}
+
+export async function getUserViolations(username: string, accessToken: string): Promise<Violation[]> {
+    const response = await fetch(`${baseUrl}/api/violation/${username}/`, {
+        method: 'GET',
+        headers: {
+            'Authorization': `Bearer ${accessToken}`,
+            'Content-Type': 'application/json',
+        },
+    });
+    return response.json();
+}
+
+export async function getKilometersLeaderboard(pageNumber: number, order: Order, accessToken: string): Promise<UserResponse[]> {
+    const response = await fetch(`${baseUrl}/api/leaderboard/km/${pageNumber}/`, {
+        method: 'GET',
+        headers: {
+            'Authorization': `Bearer ${accessToken}`,
+            'Content-Type': 'application/json',
+        },
+    });
+    return response.json();
+}
+
+export async function getMinutesLeaderboard(pageNumber: number, order: Order, accessToken: string): Promise<UserResponse[]> {
+    const response = await fetch(`${baseUrl}/api/leaderboard/minutes/${pageNumber}/`, {
+        method: 'GET',
+        headers: {
+            'Authorization': `Bearer ${accessToken}`,
+            'Content-Type': 'application/json',
+        },
+    });
+    return response.json();
+}
+
+export async function getViolationsLeaderboard(pageNumber: number, order: Order, accessToken: string): Promise<(UserResponse & { violations: number })[]> {
+    const response = await fetch(`${baseUrl}/api/leaderboard/violations/${pageNumber}/`, {
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${accessToken}`,
