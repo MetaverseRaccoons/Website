@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import ProfileContent from "../components/Profile/ProfileContentHolder";
-import { useParams } from "react-router-dom"
+import { useParams } from "react-router-dom";
 
 const Profile = () => {
   /*
@@ -16,11 +16,10 @@ const Profile = () => {
   }, [localStorageData]);
   */
 
-  const { username } = useParams()
-
+  const { username } = useParams();
   return (
     <div className="h-screen w-screen">
-        <ProfileContent name={username || ''} id='7' certificateIds={[]} />
+      <ProfileContent name={username || ""} id="7" certificateIds={[]} />
     </div>
   );
 };

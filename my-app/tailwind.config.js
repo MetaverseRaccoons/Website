@@ -3,8 +3,8 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
-      color: {
-        'body': '#111827'
+      colors: {
+        'primary': '#29d695'
       },
       padding: {
         '1/2': '50%',

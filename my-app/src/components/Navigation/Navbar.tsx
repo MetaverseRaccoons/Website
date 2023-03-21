@@ -18,12 +18,20 @@ const Navbar = () => {
           className="hidden w-full font-custom font-bold tracking-widest text-sm md:block md:w-auto"
           id="navbar-default"
         >
-          <ul className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:mt-0 md:border-0 md:bg-white">
+          <ul className="flex flex-col p-4 mt-4 border border-gray-100 md:flex-row md:mt-0 md:border-0">
             <li className="mx-5 hover:shadow-lg">
               <Link to="/">Home</Link>
             </li>
             <li className="mx-5 hover:shadow-lg">
-              <Link to="/profile">Profile</Link>
+              <Link
+                to={
+                  window.localStorage.getItem("refresh") === null
+                    ? "/login"
+                    : "/profile"
+                }
+              >
+                Profile
+              </Link>
             </li>
             <li className="mx-5 hover:shadow-lg">
               <Link to="/login">Login</Link>

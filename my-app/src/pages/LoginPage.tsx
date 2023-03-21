@@ -65,7 +65,7 @@ const LoginPage = () => {
           <div className="flex flex-wrap justify-center mb-6">
             <button
               type="submit"
-              className="flex-shrink-0 w-1/2 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-normal font-custom font-bold tracking-wider border-4 text-white py-1 px-2 rounded"
+              className="bg-primary hover:shadow-sm hover:shadow-primary flex-shrink-0 w-1/2 text-normal font-custom font-bold tracking-wider text-white py-1 px-2 rounded"
             >
               Log in
             </button>

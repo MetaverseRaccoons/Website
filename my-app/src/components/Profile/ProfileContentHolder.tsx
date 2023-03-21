@@ -18,7 +18,7 @@ const getUserData = async (name: string) => {
 };
 
 const ProfileContent = (props: ProfileProps) => {
-  const [userData, setUserData] = useState<string>();
+  const [userData, setUserData] = useState<string>("");
 
   useEffect(() => {
     const waitForUserData = async () => {
@@ -30,12 +30,13 @@ const ProfileContent = (props: ProfileProps) => {
     if (!userData) {
       waitForUserData();
     }
+    console.log(userData);
   }, [userData]);
 
   return (
     <div className="flex justify-center">
       <div className="flex flex-wrap items-center justify-center mt-5 h-2/3 w-2/3 border-2 shadow-lg">
-        <ProfileHeader name={userData || "ben"} />
+        <ProfileHeader name={userData === "" ? userData : "ben"} />
         <CertificateContent ids={props.certificateIds} />
       </div>
     </div>
