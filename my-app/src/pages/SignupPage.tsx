@@ -152,14 +152,18 @@ const SignupPage = () => {
           <div className="flex flex-wrap justify-center mb-6">
             <button
               type="submit"
-              className="flex-shrink-0 w-1/2 font-custom bg-primary hover:shadow-sm hover:shadow-primary text-normal font-bold text-white py-1 px-2 rounded"
+              className="flex-shrink-0 w-1/2 font-custom bg-primary hover:shadow-md hover:shadow-primary text-normal font-bold text-white py-1 px-2 rounded"
             >
               Signup
             </button>
           </div>
-          <div className="w-full justify-center items-center mt-2">
-            <p className="p-2">{error}</p>
-          </div>
+          {error && (
+            <div className="w-full flex justify-center h-auto items-center">
+              <p className="text-center pt-1 px-5 bg-error shadow-md shadow-errorlight font-custom font-bold text-white rounded w-auto pb-1 mb-5">
+                {error}
+              </p>
+            </div>
+          )}
         </form>
       </div>
     </div>

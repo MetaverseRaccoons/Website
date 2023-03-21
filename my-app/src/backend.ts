@@ -17,6 +17,8 @@ export interface UserResponse {
     is_instructor: boolean;
     has_drivers_license: boolean;
     is_shareable: boolean;
+    km_driven: number;
+    minutes_driven: number;
 }
 
 export interface CreateAccountResponse {

@@ -65,14 +65,20 @@ const LoginPage = () => {
           <div className="flex flex-wrap justify-center mb-6">
             <button
               type="submit"
-              className="bg-primary hover:shadow-sm hover:shadow-primary flex-shrink-0 w-1/2 text-normal font-custom font-bold tracking-wider text-white py-1 px-2 rounded"
+              className="mb-4 bg-primary hover:shadow-sm hover:shadow-primary flex-shrink-0 w-1/2 text-normal font-custom font-bold tracking-wider text-white py-1 px-2 rounded"
             >
               Log in
             </button>
           </div>
+          {error && (
+            <div className="w-full flex justify-center h-auto items-center">
+              <p className="text-center pt-1 px-5 bg-error shadow-md shadow-errorlight font-custom font-bold text-white rounded w-auto pb-1 mb-5">
+                {error}
+              </p>
+            </div>
+          )}
         </form>
       </div>
-      <h3>{error}</h3>
     </div>
   );
 };
