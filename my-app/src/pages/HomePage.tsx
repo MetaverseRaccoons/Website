@@ -11,6 +11,8 @@ const Home = () => {
         is_learner: false,
         is_shareable: false,
         has_drivers_license: false,
+    km_driven: 0,
+    minutes_driven: 0,
     });
     const [friends, setFriends] = useState<FriendsResponse>([]);
     const [friendRequests, setFriendRequests] = useState<FriendsResponse>([]);
