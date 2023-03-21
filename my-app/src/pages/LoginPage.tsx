@@ -9,23 +9,24 @@ const LoginPage = () => {
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
-
       const createTokenResponse = await backend.createToken({
         username,
         password,
       });
 
-      if (createTokenResponse.access !== undefined && !createTokenResponse.refresh !== undefined) {
+      if (
+        createTokenResponse.access !== undefined &&
+        !createTokenResponse.refresh !== undefined
+      ) {
         window.localStorage.setItem("refresh", createTokenResponse.refresh);
-        window.localStorage.setItem("access", createTokenResponse.access);  
+        window.localStorage.setItem("access", createTokenResponse.access);
 
-        const user = await backend.getPersonalUser(createTokenResponse.access)
-        window.localStorage.setItem("user", JSON.stringify(user))
+        const user = await backend.getPersonalUser(createTokenResponse.access);
+        window.localStorage.setItem("user", JSON.stringify(user));
         window.location.href = "/";
       } else {
-        setError("Invalid")
+        setError("Invalid");
       }
-      
     } catch (error) {
       setError((error as Error).message);
     }
@@ -33,11 +34,11 @@ const LoginPage = () => {
 
   return (
     <div className="w-screen h-screen flex items-center justify-center">
-      <div className="flex-shrink w-1/2 rounded border-2 flex items-center justify-center">
+      <div className="flex w-1/2 shadow-lg border-2 flex items-center justify-center">
         <form className="w-full max-w-lg pt-12" onSubmit={handleSubmit}>
           <div className="flex flex-wrap -mx-3 mb-6">
             <div className="w-full px-3 mb-6 md:mb-0">
-              <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+              <label className="block uppercase tracking-wider font-custom text-gray-700 text-sm font-bold mb-2">
                 Naam
               </label>
               <input
@@ -50,7 +51,7 @@ const LoginPage = () => {
           </div>
           <div className="flex flex-wrap -mx-3 mb-6">
             <div className="w-full px-3">
-              <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+              <label className="block uppercase tracking-wider font-custom text-gray-700 text-sm font-bold mb-2">
                 Paswoord
               </label>
               <input
@@ -64,16 +65,14 @@ const LoginPage = () => {
           <div className="flex flex-wrap justify-center mb-6">
             <button
               type="submit"
-              className="flex-shrink-0 w-1/2 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-normal font-bold border-4 text-white py-1 px-2 rounded"
+              className="flex-shrink-0 w-1/2 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-normal font-custom font-bold tracking-wider border-4 text-white py-1 px-2 rounded"
             >
               Log in
             </button>
           </div>
         </form>
       </div>
-      <h3>
-        {error}
-      </h3>
+      <h3>{error}</h3>
     </div>
   );
 };

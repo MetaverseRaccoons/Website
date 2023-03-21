@@ -9,6 +9,9 @@ module.exports = {
       padding: {
         '1/2': '50%',
         'full': '100%'
+      },
+      fontFamily: {
+        'custom': ['Roboto Condensed', 'sans-serif']
       }
     },
   },

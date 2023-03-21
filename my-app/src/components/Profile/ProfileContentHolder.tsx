@@ -34,7 +34,7 @@ const ProfileContent = (props: ProfileProps) => {
 
   return (
     <div className="flex justify-center">
-      <div className="flex flex-wrap items-center justify-center mt-3 h-2/3 w-2/3 border-2 rounded">
+      <div className="flex flex-wrap items-center justify-center mt-5 h-2/3 w-2/3 border-2 shadow-lg">
         <ProfileHeader name={userData || "ben"} />
         <CertificateContent ids={props.certificateIds} />
       </div>
