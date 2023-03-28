@@ -40,6 +40,11 @@ const SignupPage = () => {
 
       const { user, refresh, access } = await backend.createAccount(account);
 
+      if (user === undefined) {
+        setError("Invalid log in information.");
+        return;
+      }
+
       window.localStorage.setItem("user", JSON.stringify(user));
       window.localStorage.setItem("refresh", refresh);
       window.localStorage.setItem("access", access);
