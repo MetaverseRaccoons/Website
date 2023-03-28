@@ -6,6 +6,7 @@ import {
     UserResponse
 } from "../../backend";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export enum LeaderboardType {
     Kilometers = "Kilometers",
@@ -23,7 +24,7 @@ const Leaderboard = ({ leaderboardType }: UserLeaderboardProps) => {
     const [order, setOrder] = useState(Order.Descending);
     const [leaderboardData, setLeaderboardData] = useState<
         { data: UserResponse[], showProperty: "km_driven" | "minutes_driven" } |
-        { data: (UserResponse & { violations: number})[], showProperty: "violations" }
+        { data: (UserResponse & { violations: number })[], showProperty: "violations" }
     >({ data: [], showProperty: "km_driven" });
 
     function fetchLeaderboard() {
@@ -81,13 +82,13 @@ const Leaderboard = ({ leaderboardType }: UserLeaderboardProps) => {
                         leaderboardData.data.map((user, index) => (
                             <tr className="border-b text-left">
                                 <td className="px-6 py-2">{index + 1}</td>
-                                <td className="text-left px-4">{user.username}</td>
+                                <td className="text-left px-4"><Link to={`/profile/${user.username}`}>{user.username}</Link></td>
                                 <td className="px-4">{user[leaderboardData.showProperty]}</td>
                             </tr>)) :
                         leaderboardData.data.map((user, index) => (
                             <tr className="border-b">
                                 <td className="px-6 py-2">{index + 1}</td>
-                                <td className="text-left py-4">{user.username}</td>
+                                <td className="text-left py-4"><Link to={`/profile/${user.username}`}>{user.username}</Link></td>
                                 <td className="px-4">{user[leaderboardData.showProperty]}</td>
                             </tr>))
                     }

@@ -31,19 +31,39 @@ const Home = () => {
         });
     }, []);
 
+    const styles = {
+        container: {
+            margin: "0 auto",
+            width: "100%",
+            maxWidth: "400px",
+            position: "relative" as "relative",
+        },
+        main: {
+            position: "relative" as "relative",
+            width: "100%",
+        },
+        sidebar: {
+            position: "absolute" as "absolute",
+            right: "0",
+            transform: "translateX(100%)",
+        },
+    };
+
     return (
-        <div className='w-screen h-screen flex items-start justify-center'>
-            <div className="mr-10">
+        <div className='w-screen h-screen flex items-start justify-center' style={styles.container}>
+            <div className="mr-10" style={styles.main}>
                 <Leaderboard leaderboardType={LeaderboardType.Kilometers} />
                 <Leaderboard leaderboardType={LeaderboardType.Minutes} />
                 <Leaderboard leaderboardType={LeaderboardType.Violations} />
             </div>
-            <FriendsSidebar
-                currentUsername={currentUser.username}
-                friends={friends}
-                friendRequests={friendRequests}
-                reload={reloadFriendsProps}
-            />
+            <div style={styles.sidebar}>
+                <FriendsSidebar
+                    currentUsername={currentUser.username}
+                    friends={friends}
+                    friendRequests={friendRequests}
+                    reload={reloadFriendsProps}
+                />
+            </div>
         </div>
     )
 }
