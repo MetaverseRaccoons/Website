@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import ProfileContent from "../components/Profile/ProfileContentHolder";
 import { useParams } from "react-router-dom";
 
