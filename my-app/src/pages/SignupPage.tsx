@@ -152,7 +152,7 @@ const SignupPage = () => {
           <div className="flex flex-wrap justify-center mb-6">
             <button
               type="submit"
-              className="flex-shrink-0 w-1/2 font-custom bg-primary hover:shadow-md hover:shadow-primary text-normal font-bold text-white py-1 px-2 rounded"
+              className="flex-shrink-0 w-1/2 font-custom tracking-wide bg-primary hover:shadow-md hover:shadow-primary text-normal font-bold text-white py-1 px-2 rounded"
             >
               Signup
             </button>
