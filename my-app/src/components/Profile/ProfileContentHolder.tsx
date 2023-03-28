@@ -10,20 +10,24 @@ interface ProfileProps {
 }
 
 const getUserData = async (name: string) => {
-  const data = await backend.getPersonalUser(
+  const data = await backend.getUser(
+    name,
     window.localStorage.getItem("access") || ""
   );
-  return data;
+  const user_private = JSON.stringify(data).indexOf("message") !== -1;
+  return { data, user_private };
 };
 
 const ProfileContent = (props: ProfileProps) => {
   const [userData, setUserData] = useState<backend.UserResponse>();
+  const [userPrivate, setUserPrivate] = useState(true);
 
   useEffect(() => {
     const waitForUserData = async () => {
-      const data = await getUserData(props.name);
+      const { data, user_private } = await getUserData(props.name);
 
       setUserData(data);
+      setUserPrivate(user_private);
     };
 
     if (!userData) {
@@ -36,6 +40,7 @@ const ProfileContent = (props: ProfileProps) => {
     <div className="flex justify-center">
       <div className="flex flex-wrap items-center justify-center mt-5 h-2/3 w-2/3 border-2 shadow-lg">
         <ProfileHeader
+          user_private={userPrivate}
           username={userData?.username ?? ""}
           email={userData?.email ?? ""}
           is_learner={userData?.is_learner ?? false}

@@ -1,4 +1,5 @@
 import { profile } from "console";
+import { useEffect } from "react";
 import { UserResponse } from "../../backend";
 
 const km_driven_titles = (km: number) => {
@@ -11,8 +12,12 @@ const km_driven_titles = (km: number) => {
   }
 };
 
-const ProfileHeader = (props: UserResponse) => {
-  const { username, km_driven, is_shareable } = props;
+interface OwnProps {
+  user_private: boolean;
+}
+
+const ProfileHeader = (props: UserResponse & OwnProps) => {
+  const { username, km_driven, user_private } = props;
 
   const profilecontent = () => {
     return (
@@ -47,7 +52,7 @@ const ProfileHeader = (props: UserResponse) => {
     );
   };
 
-  return is_shareable ? not_shareable() : profilecontent();
+  return user_private ? not_shareable() : profilecontent();
 };
 
 export default ProfileHeader;
