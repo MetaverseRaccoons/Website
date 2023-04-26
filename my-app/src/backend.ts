@@ -171,7 +171,7 @@ export async function declineFriendRequest(fromUsername: string, accessToken: st
 
 export async function removeFriend(username: string, accessToken: string): Promise<MessageResponse & Successful> {
     const response = await fetch(`${baseUrl}/api/friend/${username}/remove/`, {
-        method: 'GET',
+        method: 'POST',
         headers: {
             'Authorization': `Bearer ${accessToken}`,
             'Content-Type': 'application/json',

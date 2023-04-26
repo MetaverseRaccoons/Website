@@ -61,7 +61,7 @@ const SignupPage = () => {
           <div className="flex flex-wrap -mx-3 mb-6">
             <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
               <label className="block uppercase tracking-wider font-custom text-gray-700 text-sm font-bold mb-2">
-                Naam
+                Name
               </label>
               <input
                 className="appearance-none block w-full bg-gray-200 font-custom text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-200"
@@ -72,7 +72,7 @@ const SignupPage = () => {
             </div>
             <div className="w-full md:w-1/2 px-3">
               <label className="block uppercase tracking-wider font-custom text-gray-700 text-sm font-bold mb-2">
-                Email adres
+                Email adress
               </label>
               <input
                 className="appearance-none block w-full bg-gray-200 font-custom text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-200"
@@ -85,7 +85,7 @@ const SignupPage = () => {
           <div className="flex flex-wrap -mx-3 mb-6">
             <div className="w-1/2 px-3">
               <label className="block uppercase tracking-wider text-gray-700 text-sm font-bold font-custom mb-2">
-                Paswoord
+                Password
               </label>
               <input
                 className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-200"
@@ -96,7 +96,7 @@ const SignupPage = () => {
             </div>
             <div className="w-1/2 px-3">
               <label className="block uppercase tracking-wider font-custom text-gray-700 text-sm font-bold mb-2">
-                Paswoord (opnieuw)
+                Password (again)
               </label>
               <input
                 className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-200"
@@ -108,7 +108,7 @@ const SignupPage = () => {
           </div>
           <div className="flex flex-wrap mb-6">
             <label className="block uppercase tracking-wider font-custom text-gray-700 text-sm font-bold mb-2">
-              Rijksregisternummer
+              Social Security Number
             </label>
             <input
               className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-200"
@@ -120,7 +120,7 @@ const SignupPage = () => {
           </div>
           <div className="flex justify-center flex-wrap mb-2 ">
             <label className="w-1/3 uppercase tracking-wider font-custom text-gray-700 text-sm font-bold mb-2">
-              Leerling
+              Driving pupil
             </label>
             <input
               id="leerling"
@@ -132,7 +132,7 @@ const SignupPage = () => {
           </div>
           <div className="flex justify-center flex-wrap mb-2 ">
             <label className="w-1/3 uppercase tracking-wider font-bold text-gray-700 text-sm font-custom mb-2">
-              Rijbewijs
+              Drivers license
             </label>
             <input
               id="rijbewijs"
@@ -144,7 +144,7 @@ const SignupPage = () => {
           </div>
           <div className="flex justify-center flex-wrap mb-6 ">
             <label className="w-1/3 uppercase tracking-wider font-custom text-gray-700 text-sm font-bold mb-2">
-              Deel gegevens
+              Share personal data
             </label>
             <input
               id="deelgegevens"
