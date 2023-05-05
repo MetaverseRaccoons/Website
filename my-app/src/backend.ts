@@ -19,6 +19,7 @@ export interface UserResponse {
     is_shareable: boolean;
     km_driven: number;
     minutes_driven: number;
+    certsGot: string[];
 }
 
 export interface CreateAccountResponse {

@@ -22,6 +22,7 @@ const Home = () => {
     has_drivers_license: false,
     km_driven: 0,
     minutes_driven: 0,
+    certsGot: [],
   });
 
   const [friends, setFriends] = useState<FriendsResponse>([]);

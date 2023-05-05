@@ -3,7 +3,17 @@ import {CertificateType} from './CertificateType'
 const Certificates: CertificateType[] = [
     {
         id: '0',
-        title: 'pro autobestuurder',
+        title: 'Level 1',
+        description: 'zeer goed achter het stuur\nfdjsklfjfdlsjfblahblahblah'
+    },
+    {
+        id: '1',
+        title: 'Level 2',
+        description: 'zeer goed achter het stuur\nfdjsklfjfdlsjfblahblahblah'
+    },
+    {
+        id: '2',
+        title: 'Level 3',
         description: 'zeer goed achter het stuur\nfdjsklfjfdlsjfblahblahblah'
     }
 ]

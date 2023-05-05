@@ -6,7 +6,7 @@ const Profile = () => {
   console.log(username);
   return (
     <div className="h-screen w-screen">
-      <ProfileContent name={username || ""} id="7" certificateIds={[]} />
+      <ProfileContent name={username || ""} id="7" />
     </div>
   );
 };

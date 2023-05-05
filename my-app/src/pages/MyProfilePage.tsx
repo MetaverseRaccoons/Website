@@ -14,7 +14,7 @@ const MyProfile = () => {
 
   return (
     <div className="h-screen w-screen">
-      <ProfileContent name={currentUserName ?? ""} id="7" certificateIds={[]} />
+      <ProfileContent name={currentUserName ?? ""} id="7" />
     </div>
   );
 };

@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 interface ProfileProps {
   name: string;
   id: string;
-  certificateIds: string[];
 }
 
 const getUserData = async (name: string) => {
@@ -49,8 +48,9 @@ const ProfileContent = (props: ProfileProps) => {
           is_shareable={userData?.is_shareable ?? false}
           km_driven={userData?.km_driven ?? 0}
           minutes_driven={userData?.minutes_driven ?? 0}
+          certsGot = {userData?.certsGot ?? []}
         />
-        <CertificateContent ids={props.certificateIds} />
+        <CertificateContent ids={userData?.certsGot ?? []} />
       </div>
     </div>
   );
