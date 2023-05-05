@@ -3,18 +3,26 @@ import {CertificateType} from './CertificateType'
 const Certificates: CertificateType[] = [
     {
         id: '0',
-        title: 'Level 1',
-        description: 'zeer goed achter het stuur\nfdjsklfjfdlsjfblahblahblah'
+        title: 'Schakelgoeroe',
+        icon: 'shift',
+        description: `Je hebt de kunst van het schakelen en het soepel overschakelen tussen snelheden onder de knie naarmate je vordert in je virtuele reis. 
+Je hebt de koppeling overwonnen en harmonie gevonden in het schakelen, en je bent klaar voor de weg. Goed gedaan, schakelgoeroe!`
     },
     {
         id: '1',
-        title: 'Level 2',
-        description: 'zeer goed achter het stuur\nfdjsklfjfdlsjfblahblahblah'
+        title: 'De kunst van het remmen',
+        icon: 'brake',
+        description: `Je hebt een cruciale mijlpaal bereikt in je virtuele reis.
+Je hebt met succes geleerd hoe je correct moet remmen, waarbij je controle en efficiëntie hebt getoond in verschillende verkeersomstandigheden.
+Blijf op koers en blijf je vaardigheden verfijnen voor een soepele en veilige rijervaring.`
     },
     {
         id: '2',
-        title: 'Level 3',
-        description: 'zeer goed achter het stuur\nfdjsklfjfdlsjfblahblahblah'
+        title: 'Meester van precisie',
+        icon: 'spark',
+        description: `Je hebt het uitdagende S-Park level succesvol afgerond en de techniek van nauwkeurig parkeren geperfectioneerd.
+Met je geavanceerde vaardigheden en expertise benje nu klaar om elke parkeeruitdaging aan te gaan die je tegenkomt!
+Ga zo door en blijf de virtuele parkeerplaatsen domineren.`
     }
 ]
 
@@ -26,7 +34,7 @@ const getCertificateById = (id: string) : CertificateType => {
     for(let i: number = 0; i < Certificates.length; i++) {
         if (Certificates[i].id === id) return Certificates[i]
     }
-    return {id: '-1', title: 'null', description:'null'};
+    return {id: '-1', title: 'null', icon: 'null', description:'null'};
 }
 
 export {Certificates, getCertificateById};
