@@ -24,13 +24,16 @@ const CertificateComponent = (certificate: CertificateType) => {
   return (
     <div className="pt-10">
       <div className={stylingBasedOnType(certificate.cert_type ?? "")}>
-        <div className="w-full h-2/3 block">
-          <label className="font-bold">{certificate.title}</label>
-        </div>
         <div className="w-full h-1/2 block">
-          <label className="w-full h-1/2 block">
-            {certificate.description}
-          </label>
+          <div className="flex h-8 my-2">
+            <img
+              className="align-middle mr-2"
+              src={"/icons/" + certificate.icon + ".png"}
+              alt={certificate.icon}
+            />
+            <label className="font-bold my-auto ">{certificate.title}</label>
+          </div>
+          <label>{certificate.description}</label>
         </div>
       </div>
     </div>
