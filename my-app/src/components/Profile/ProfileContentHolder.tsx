@@ -83,7 +83,9 @@ const ProfileContent = (props: ProfileProps) => {
           violations={userData?.violations ?? []}
         />
         <CertificateContent
-          ids={certificates.concat(levelcertificates, violations) ?? []}
+          ids={
+            userData?.certificates.concat(levelcertificates, violations) ?? []
+          }
         />
       </div>
     </div>
