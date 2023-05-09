@@ -5,7 +5,7 @@ const Profile = () => {
   const { username } = useParams();
   return (
     <div className="h-screen w-screen">
-      <ProfileContent name={username || ""} id="7" certificateIds={["0"]} />
+      <ProfileContent name={username || ""} id="7" />
     </div>
   );
 };
