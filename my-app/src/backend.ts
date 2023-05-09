@@ -156,7 +156,7 @@ export async function acceptFriendRequest(fromUsername: string, accessToken: str
 
 export async function declineFriendRequest(fromUsername: string, accessToken: string): Promise<MessageResponse & Successful> {
     const response = await fetch(`${baseUrl}/api/friend/request/${fromUsername}/decline/`, {
-        method: 'GET',
+        method: 'POST',
         headers: {
             'Authorization': `Bearer ${accessToken}`,
             'Content-Type': 'application/json',
