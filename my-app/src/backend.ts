@@ -10,6 +10,21 @@ export interface CreateAccountRequest {
     is_shareable: boolean;
 }
 
+export interface CertificatesScheme {
+    title: string;
+    description: string;
+}
+
+export interface LevelSessionScheme {
+    level: {
+        name: string;
+        description: string;
+    };
+    start_time: string;
+    end_time: string;
+    completed: boolean;
+}
+
 export interface UserResponse {
     username: string;
     email: string;
@@ -19,7 +34,14 @@ export interface UserResponse {
     is_shareable: boolean;
     km_driven: number;
     minutes_driven: number;
-    certsGot: string[];
+    certificates: CertificatesScheme[];
+    level_sessions: LevelSessionScheme[];
+    violations: {
+        time: string;
+        type: string;
+        severity: number;
+        description: string;
+    }[];
 }
 
 export interface CreateAccountResponse {

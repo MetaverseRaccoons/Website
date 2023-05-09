@@ -1,8 +1,9 @@
-import { getCertificateById } from "../../helpers/Certificates";
+import { CertificatesScheme } from "../../backend";
+import { getCertificateByTitle } from "../../helpers/Certificates";
 import { CertificateType } from "../../helpers/CertificateType";
 
 interface CertificateContentProps {
-  ids: string[];
+  ids: CertificatesScheme[];
 }
 
 const baseString = "w-full flex rounded p-3";
@@ -22,7 +23,7 @@ const stylingBasedOnType = (type: string) => {
 
 const CertificateComponent = (certificate: CertificateType) => {
   return (
-    <div className="pt-10">
+    <div className="pt-10 font-custom">
       <div className={stylingBasedOnType(certificate.cert_type ?? "")}>
         <div className="w-full h-1/2 block">
           <div className="flex h-8 my-2">
@@ -42,7 +43,7 @@ const CertificateComponent = (certificate: CertificateType) => {
 
 const CertificateContent = (props: CertificateContentProps) => {
   const certificates = props.ids.map((id) => {
-    return CertificateComponent(getCertificateById(id));
+    return CertificateComponent(getCertificateByTitle(id.title));
   });
   return (
     <div className="font-custom w-2/3 h-2/3 pb-10 justify-center">

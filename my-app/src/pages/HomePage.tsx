@@ -1,6 +1,7 @@
 import FriendsSidebar from "../components/Profile/FriendsSidebar";
 import { useEffect, useState } from "react";
 import {
+  CertificatesScheme,
   FriendsResponse,
   getFriends,
   getPersonalUser,
@@ -13,17 +14,7 @@ import Leaderboard, {
 
 const Home = () => {
   const accessToken = localStorage.getItem("access") as string;
-  const [currentUser, setCurrentUser] = useState<UserResponse>({
-    username: "",
-    email: "",
-    is_instructor: false,
-    is_learner: false,
-    is_shareable: false,
-    has_drivers_license: false,
-    km_driven: 0,
-    minutes_driven: 0,
-    certsGot: [],
-  });
+  const [currentUser, setCurrentUser] = useState<UserResponse>();
 
   const [friends, setFriends] = useState<FriendsResponse>([]);
   const [friendRequests, setFriendRequests] = useState<FriendsResponse>([]);
@@ -65,7 +56,7 @@ const Home = () => {
 
   return (
     <div
-      className="w-screen h-screen flex items-start pt-10 justify-center"
+      className="w-screen h-auto flex items-start pt-10 justify-center"
       style={styles.container}
     >
       <div className="mr-10" style={styles.main}>
@@ -75,7 +66,7 @@ const Home = () => {
       </div>
       <div style={styles.sidebar}>
         <FriendsSidebar
-          currentUsername={currentUser.username}
+          currentUsername={currentUser?.username ?? ""}
           friends={friends}
           friendRequests={friendRequests}
           reload={reloadFriendsProps}

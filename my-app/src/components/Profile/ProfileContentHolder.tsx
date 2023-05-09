@@ -2,6 +2,7 @@ import ProfileHeader from "./ProfileHeader";
 import CertificateContent from "./CertificateContent";
 import * as backend from "../../backend";
 import { useEffect, useState } from "react";
+import { CertificatesScheme } from "../../backend";
 
 interface ProfileProps {
   name: string;
@@ -35,6 +36,34 @@ const ProfileContent = (props: ProfileProps) => {
     console.log(userData);
   }, [userData, props.name]);
 
+  const certificates = [
+    { title: "Schakelgoeroe", description: "fzjfjmfdmlfdls" },
+    { title: "De kunst van het remmen", description: "" },
+    { title: "Meester van precisie", description: "" },
+  ];
+
+  const levelcertificates =
+    userData?.level_sessions?.map((level) => {
+      if (level.completed) {
+        return {
+          title: level.level.name ?? "",
+          description: level.level.description ?? "",
+        };
+      }
+      return {
+        title: "",
+        description: "",
+      };
+    }) ?? [];
+
+  const violations =
+    userData?.violations?.map((violation) => {
+      return {
+        title: violation.type ?? "",
+        description: "",
+      };
+    }) ?? [];
+
   return (
     <div className="flex justify-center">
       <div className="flex flex-wrap items-center justify-center mt-5 h-2/3 w-2/3 border-2 shadow-lg">
@@ -48,9 +77,14 @@ const ProfileContent = (props: ProfileProps) => {
           is_shareable={userData?.is_shareable ?? false}
           km_driven={userData?.km_driven ?? 0}
           minutes_driven={userData?.minutes_driven ?? 0}
-          certsGot = {userData?.certsGot ?? []}
+          certificates={[]}
+          // certificates={userData?.certificates ?? []}
+          level_sessions={userData?.level_sessions ?? []}
+          violations={userData?.violations ?? []}
         />
-        <CertificateContent ids={userData?.certsGot ?? []} />
+        <CertificateContent
+          ids={certificates.concat(levelcertificates, violations) ?? []}
+        />
       </div>
     </div>
   );

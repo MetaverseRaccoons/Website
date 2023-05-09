@@ -13,7 +13,7 @@ const MyProfile = () => {
   }, []);
 
   return (
-    <div className="h-screen w-screen">
+    <div className="h-auto mb-10 w-screen">
       <ProfileContent name={currentUserName ?? ""} id="7" />
     </div>
   );
